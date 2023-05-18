@@ -1,24 +1,46 @@
-from instagrapi import Client
-import requests
 
-# from instabot import Bot
-# bot = Bot()
-# bot.login(username="username", password="username")
-
-data_0 = {"client_id": ,
-          "redirect_uri": "http://",
-          "scope": "user_profile",
-          "response_type": "code"}
-
-data = {"client_id": ,
-        "client_secret": "",
-        #"client_secret": "",
-        "grant_type": "authorization_code",
-        "redirect_uri": "http://",
-        "code": ""}
-#response = requests.post("https://api.instagram.com/oauth/access_token", data=data)
-response = requests.get("")
-print(response.content)
+from html.parser import HTMLParser
+from bs4 import BeautifulSoup
 
 
-#x = requests.post("https://api.instagram.com/oauth/access_token")
+with open("followers_02_02_2023.html", "r", encoding='utf-8') as f:
+    followers_links = []
+    soup = BeautifulSoup(f, "html.parser")
+    href_tags = soup.find_all(href=True)
+    for href in href_tags:
+        followers_links.append(href.get('href'))
+    print(followers_links)
+
+
+def save_to_txt(data):
+    with open("02_02_2023_followers.txt", "w", encoding='utf-8') as txt_file:
+        for link in data:
+            txt_file.write(link + '\n')
+        print(txt_file)
+
+save_to_txt(followers_links)
+
+
+def find_bots(followers_links):
+    with open("followers.html", "r", encoding='utf-8') as f:
+        new_followers_links = []
+        new_followers_links_to_add = []
+        bots = []
+        soup = BeautifulSoup(f, "html.parser")
+        href_tags = soup.find_all(href=True)
+        for href in href_tags:
+            new_followers_links.append(href.get('href'))
+            if href.get('href') not in followers_links:
+                new_followers_links_to_add.append(href.get('href'))
+        for old in followers_links:
+            if old not in new_followers_links:
+                bots.append(old)
+    #Todo NOT override
+    # with open("02_02_2023_followers.txt", "w", encoding='utf-8') as f:
+    #     for new_to_add in new_followers_links_to_add:
+    #         f.write(new_to_add + '\n')
+    with open("bots.txt", "w", encoding='utf-8') as b:
+        for bot in bots:
+            b.write(bot + '\n')
+    return bots
+print(find_bots(followers_links))
