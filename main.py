@@ -1,4 +1,3 @@
-
 from html.parser import HTMLParser
 from bs4 import BeautifulSoup
 
@@ -49,6 +48,7 @@ def find_bots():
     with open("bots.txt", "w", encoding='utf-8') as b:
         for bot in bots:
             b.write(bot + '\n')
-    return ("Bots:", bots)
+    return "Bots: {}".format(bots[:-1])
+
 
 print(find_bots())
