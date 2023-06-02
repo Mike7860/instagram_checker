@@ -50,5 +50,5 @@ def find_bots():
             b.write(bot + '\n')
     return "Bots: {}".format(bots[:-1])
 
-
+#Todo maybe function for comparing followers lists
 print(find_bots())
