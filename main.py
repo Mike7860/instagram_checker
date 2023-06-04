@@ -51,4 +51,28 @@ def find_bots():
     return "Bots: {}".format(bots[:-1])
 
 #Todo maybe function for comparing followers lists
-print(find_bots())
+#print(find_bots())
+
+
+def followed_but_not_following():
+    followers_links = []
+    with open("02_02_2023_followers.txt", "r", encoding='utf-8') as txt:
+        for t in txt:
+            followers_links.append(t.rstrip('\n'))
+    with open("following.html", "r", encoding='utf-8') as f:
+        current_following_links = []
+        new_following_to_check = []
+        bots = []
+        soup = BeautifulSoup(f, "html.parser")
+        href_tags = soup.find_all(href=True)
+        for href in href_tags:
+            current_following_links.append(href.get('href'))
+            if href.get('href') not in followers_links:
+                new_following_to_check.append(href.get('href'))
+        # for old in followers_links:
+        #     if old not in current_following_links:
+        #         # Todo pop method with deleting bots
+        #         bots.append(old)
+    return new_following_to_check
+
+print(followed_but_not_following())
