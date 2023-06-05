@@ -74,5 +74,5 @@ def followed_but_not_following():
         #         # Todo pop method with deleting bots
         #         bots.append(old)
     return new_following_to_check
-
+#Todo maybe profiling??
 print(followed_but_not_following())
