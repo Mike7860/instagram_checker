@@ -51,7 +51,7 @@ def find_bots():
     return "Bots: {}".format(bots[:-1])
 
 #Todo maybe function for comparing followers lists
-#print(find_bots())
+print(find_bots())
 
 
 def followed_but_not_following():
@@ -72,6 +72,6 @@ def followed_but_not_following():
         #     if old not in current_following_links:
         #         # Todo pop method with deleting bots
         #         bots.append(old)
-    return new_following_to_check
+    return "Followers widmo: {}".format(new_following_to_check)
 #Todo maybe profiling??
 print(followed_but_not_following())
