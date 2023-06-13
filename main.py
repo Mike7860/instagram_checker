@@ -40,18 +40,21 @@ def find_bots():
             if old not in current_followers_links:
                 #Todo pop method with deleting bots
                 bots.append(old)
-
-    # # #Todo NOT override
-    # # with open("02_02_2023_followers.txt", "a", encoding='utf-8') as f:
-    # #     for new_to_add in new_followers_links_to_add:
-    # #         f.write(new_to_add + '\n')
+                followers_links.remove(old)
+                print(old)
+    with open("02_02_2023_followers.txt", "w", encoding='utf-8') as f:
+        for actual in followers_links:
+            f.write(actual + '\n')
+    with open("02_02_2023_followers.txt", "a", encoding='utf-8') as f:
+        for new_to_add in new_followers_links_to_add:
+            f.write(new_to_add + '\n')
     with open("bots.txt", "w", encoding='utf-8') as b:
         for bot in bots:
             b.write(bot + '\n')
+    print(len(followers_links))
     return "Bots: {}".format(bots[:-1])
 
-#Todo maybe function for comparing followers lists
-print(find_bots())
+#print(find_bots())
 
 
 def followed_but_not_following():
