@@ -38,7 +38,6 @@ def find_bots():
                 new_followers_links_to_add.append(href.get('href'))
         for old in followers_links:
             if old not in current_followers_links:
-                #Todo pop method with deleting bots
                 bots.append(old)
                 followers_links.remove(old)
                 print(old)
