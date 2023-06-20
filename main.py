@@ -51,9 +51,9 @@ def find_bots():
         for bot in bots:
             b.write(bot + '\n')
     print(len(followers_links))
-    return "Bots: {}".format(bots[:-1])
+    return "Bots: {}".format(bots)
 
-#print(find_bots())
+print(find_bots())
 
 
 def followed_but_not_following():
