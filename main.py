@@ -53,7 +53,7 @@ def find_bots():
     print(len(followers_links))
     return "Bots: {}".format(bots)
 
-print(find_bots())
+#print(find_bots())
 
 
 def followed_but_not_following():
