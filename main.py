@@ -51,6 +51,7 @@ def find_bots():
         for bot in bots:
             b.write(bot + '\n')
     print(len(followers_links))
+    print(followers_links)
     return "Bots: {}".format(bots)
 
 #print(find_bots())
