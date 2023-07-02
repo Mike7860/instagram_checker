@@ -51,7 +51,7 @@ def find_bots():
         for bot in bots:
             b.write(bot + '\n')
     print(len(followers_links))
-    print(followers_links)
+    #print(followers_links)
     return "Bots: {}".format(bots)
 
 
@@ -80,8 +80,6 @@ def followed_but_not_following():
 #Todo maybe profiling??
 
 
-
-
-#print(followed_but_not_following())
+print(followed_but_not_following())
 
 
