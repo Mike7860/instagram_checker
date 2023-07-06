@@ -55,7 +55,7 @@ def find_bots():
     return "Bots: {}".format(bots)
 
 
-print(find_bots())
+#print(find_bots())
 
 
 def followed_but_not_following():
@@ -85,6 +85,6 @@ def followed_but_not_following():
 
 
 
-#print(followed_but_not_following())
+print(followed_but_not_following())
 
 
