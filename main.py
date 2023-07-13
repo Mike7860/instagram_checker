@@ -50,12 +50,12 @@ def find_bots():
     with open("bots.txt", "w", encoding='utf-8') as b:
         for bot in bots:
             b.write(bot + '\n')
-    print(len(followers_links))
-    print(followers_links)
+    #print(len(followers_links))
+    #print(followers_links)
     return "Bots: {}".format(bots)
 
 
-print(find_bots())
+#print(find_bots())
 
 
 def followed_but_not_following():
@@ -86,6 +86,6 @@ def followed_but_not_following():
 
 
 
-#print(followed_but_not_following())
+print(followed_but_not_following())
 
 
