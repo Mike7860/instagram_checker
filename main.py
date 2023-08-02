@@ -75,7 +75,7 @@ def followed_but_not_following():
         # for old in followers_links:
         #     if old not in current_following_links:
         #         # Todo pop method with deleting bots
-        #         bots.append(old)
+        #         #bots.append(old)
     return "Followers widmo: {}".format(new_following_to_check)
 
 
