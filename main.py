@@ -55,7 +55,7 @@ def find_bots():
     return "Bots or changed nicks: {}".format(bots)
 
 
-print(find_bots())
+#print(find_bots())
 
 
 def followed_but_not_following():
@@ -76,7 +76,7 @@ def followed_but_not_following():
         #     if old not in current_following_links:
         #         # Todo pop method with deleting bots
         #         #bots.append(old)
-    return "Followers 'widmo'?: {}".format(new_following_to_check)
+    return "Followers WIDMO: {}".format(new_following_to_check)
 
 
 
@@ -85,6 +85,6 @@ def followed_but_not_following():
 
 
 
-#print(followed_but_not_following())
+print(followed_but_not_following())
 
 
