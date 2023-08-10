@@ -72,6 +72,7 @@ def followed_but_not_following():
             current_following_links.append(href.get('href'))
             if href.get('href') not in followers_links:
                 new_following_to_check.append(href.get('href'))
+
         # for old in followers_links:
         #     if old not in current_following_links:
         #         # Todo pop method with deleting bots
