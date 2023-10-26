@@ -55,7 +55,7 @@ def find_bots():
     return "Bots or changed nicks: {}".format(bots)
 
 
-print(find_bots())
+#print(find_bots())
 
 
 
@@ -73,6 +73,7 @@ def followed_but_not_following():
             current_following_links.append(href.get('href'))
             if href.get('href') not in followers_links:
                 new_following_to_check.append(href.get('href'))
+
 
 
 
