@@ -71,6 +71,7 @@ def followed_but_not_following():
         soup = BeautifulSoup(f, "html.parser")
         href_tags = soup.find_all(href=True)
 
+
         for href in href_tags:
             current_following_links.append(href.get('href'))
             if href.get('href') not in followers_links:
