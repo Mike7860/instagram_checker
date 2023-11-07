@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 #     #print(followers_links)
 
 
+
 def save_to_txt(data):
     with open("02_02_2023_followers.txt", "w", encoding='utf-8') as txt_file:
         for link in data:
@@ -55,7 +56,7 @@ def find_bots():
     return "Bots or changed nicks: {}".format(bots)
 
 
-print(find_bots())
+#print(find_bots())
 
 
 
