@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 
 
 
+
 def save_to_txt(data):
     with open("02_02_2023_followers.txt", "w", encoding='utf-8') as txt_file:
         for link in data:
