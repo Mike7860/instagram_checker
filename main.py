@@ -24,40 +24,61 @@ def save_to_txt(data):
 
 def find_bots():
     followers_links = []
-    with open("02_02_2023_followers.txt", "r", encoding='utf-8') as txt:
+    #with open("02_02_2023_followers.txt", "r", encoding='utf-8') as txt:
+    with open("02_02_2023_followers_nicks.txt", "r", encoding='utf-8') as txt:
         for t in txt:
             followers_links.append(t.rstrip('\n'))
 
-    with open("followers_1.html", "r", encoding='utf-8') as f:
-        current_followers_links = []
-        new_followers_links_to_add = []
+    with open("followers_8_11.txt", "r", encoding='utf-8') as txt_2:
         bots = []
-        soup = BeautifulSoup(f, "html.parser")
-        href_tags = soup.find_all(href=True)
-        for href in href_tags:
-            current_followers_links.append(href.get('href'))
-            if href.get('href') not in followers_links:
-                new_followers_links_to_add.append(href.get('href'))
-        for old in followers_links:
-            if old not in current_followers_links:
-                bots.append(old)
-                followers_links.remove(old)
-                print(old)
-    with open("02_02_2023_followers.txt", "w", encoding='utf-8') as f:
-        for actual in followers_links:
-            f.write(actual + '\n')
-    with open("02_02_2023_followers.txt", "a", encoding='utf-8') as f:
-        for new_to_add in new_followers_links_to_add:
-            f.write(new_to_add + '\n')
-    with open("bots.txt", "w", encoding='utf-8') as b:
+        trash_list = []
+        #print(followers_links)
+        for a in txt_2:
+            if a.rstrip('\n') != '·' and not 'Zdjęcie profilowe' in a.rstrip('\n'):
+                trash_list.append(a.rstrip('\n'))
+
+
+        # !!! DZIALA
+        for current_follower in followers_links:
+            if current_follower not in trash_list:
+                print('Bot or nick changes: ', current_follower)
+                bots.append(current_follower)
+    with open("bots_2.txt", "w", encoding='utf-8') as b:
         for bot in bots:
             b.write(bot + '\n')
-    print(len(followers_links))
-    #print(followers_links)
-    return "Bots or changed nicks: {}".format(bots)
+
+    return bots
+
+    # with open("followers_1.html", "r", encoding='utf-8') as f:
+    #     current_followers_links = []
+    #     new_followers_links_to_add = []
+    #     bots = []
+    #     soup = BeautifulSoup(f, "html.parser")
+    #     href_tags = soup.find_all(href=True)
+    #     for href in href_tags:
+    #         current_followers_links.append(href.get('href'))
+    #         if href.get('href') not in followers_links:
+    #             new_followers_links_to_add.append(href.get('href'))
+    #     for old in followers_links:
+    #         if old not in current_followers_links:
+    #             bots.append(old)
+    #             followers_links.remove(old)
+    #             print(old)
+    # with open("02_02_2023_followers.txt", "w", encoding='utf-8') as f:
+    #     for actual in followers_links:
+    #         f.write(actual + '\n')
+    # with open("02_02_2023_followers.txt", "a", encoding='utf-8') as f:
+    #     for new_to_add in new_followers_links_to_add:
+    #         f.write(new_to_add + '\n')
+    # with open("bots.txt", "w", encoding='utf-8') as b:
+    #     for bot in bots:
+    #         b.write(bot + '\n')
+    # print(len(followers_links))
+    # #print(followers_links)
+    # return "Bots or changed nicks: {}".format(bots)
 
 
-#print(find_bots())
+print(find_bots())
 
 
 
@@ -146,6 +167,6 @@ def followed_but_not_following():
 
 
 
-print(followed_but_not_following())
+#print(followed_but_not_following())
 
 
