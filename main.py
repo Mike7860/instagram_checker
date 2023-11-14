@@ -43,6 +43,7 @@ def find_bots():
             if current_follower not in trash_list:
                 print('Bot or nick changes: ', current_follower)
                 bots.append(current_follower)
+
     with open("bots_2.txt", "w", encoding='utf-8') as b:
         for bot in bots:
             b.write(bot + '\n')
