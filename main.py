@@ -74,7 +74,7 @@ def find_bots():
     with open("bots.txt", "w", encoding='utf-8') as b:
         for bot in bots:
             b.write(bot + '\n')
-    print(len(followers_links))
+    #print(len(followers_links))
     #print(followers_links)
     return "Bots or changed nicks: {}".format(bots)
 
