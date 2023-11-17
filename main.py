@@ -65,6 +65,7 @@ def find_bots():
                 bots.append(old)
                 followers_links.remove(old)
                 print(old)
+
     with open("02_02_2023_followers.txt", "w", encoding='utf-8') as f:
         for actual in followers_links:
             f.write(actual + '\n')
