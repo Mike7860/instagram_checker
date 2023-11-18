@@ -69,6 +69,7 @@ def find_bots():
     with open("02_02_2023_followers.txt", "w", encoding='utf-8') as f:
         for actual in followers_links:
             f.write(actual + '\n')
+
     with open("02_02_2023_followers.txt", "a", encoding='utf-8') as f:
         for new_to_add in new_followers_links_to_add:
             f.write(new_to_add + '\n')
