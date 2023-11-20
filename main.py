@@ -64,7 +64,7 @@ def find_bots():
             if old not in current_followers_links:
                 bots.append(old)
                 followers_links.remove(old)
-                print(old)
+                #print(old)
 
     with open("02_02_2023_followers.txt", "w", encoding='utf-8') as f:
         for actual in followers_links:
