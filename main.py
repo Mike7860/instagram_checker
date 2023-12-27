@@ -50,6 +50,7 @@ def find_bots():
     #
     # return bots
 
+
     with open("followers_1.html", "r", encoding='utf-8') as f:
         current_followers_links = []
         new_followers_links_to_add = []
