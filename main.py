@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 
 
+
 # To one time using
 # with open("followers_02_02_2023.html", "r", encoding='utf-8') as f:
 #     followers_links = []
@@ -11,6 +12,7 @@ from bs4 import BeautifulSoup
 #     for href in href_tags:
 #         followers_links.append(href.get('href'))
 #     #print(followers_links)
+
 
 
 
