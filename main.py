@@ -105,6 +105,7 @@ def followed_but_not_following():
             followers_links.append(t.rstrip('\n'))
 
 
+
     with open("following.html", "r", encoding='utf-8') as f:
         current_following_links = []
         new_following_to_check = []
