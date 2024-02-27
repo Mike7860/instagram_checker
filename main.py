@@ -86,6 +86,7 @@ def find_bots():
     #         b.write(bot + '\n')
 
 
+
     #print(len(followers_links))
     #print(followers_links)
     return "Bots or changed nicks: {}".format(bots)
