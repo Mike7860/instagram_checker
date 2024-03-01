@@ -82,6 +82,7 @@ def find_bots():
             f.write(new_to_add + '\n')
     #
 
+
     # with open("bots.txt", "w", encoding='utf-8') as b:
     #     for bot in bots:
     #         b.write(bot + '\n')
