@@ -70,6 +70,7 @@ def find_bots():
             current_followers_links.append(href.get('href'))
             if href.get('href') not in followers_links:
                 new_followers_links_to_add.append(href.get('href'))
+
         for old in followers_links:
             if old not in current_followers_links:
                 bots.append(old)
