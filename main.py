@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 
 
-# To one time using
+# To one-time using
 
 
 # with open("followers_02_02_2023.html", "r", encoding='utf-8') as f:
