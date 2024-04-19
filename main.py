@@ -172,6 +172,7 @@ def followed_but_not_following():
 
 
 
+
         for href in href_tags:
             current_following_links.append(href.get('href'))
             if href.get('href') not in followers_links:
